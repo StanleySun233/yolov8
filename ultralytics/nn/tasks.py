@@ -995,7 +995,10 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             PSA,
             SCDown,
             C2fCIB,
-            SimpleStem, VisionClueMerge, VSSBlock, XSSBlock
+            SimpleStem,
+            VisionClueMerge,
+            VSSBlock,
+            XSSBlock
         }:
             c1, c2 = ch[f], args[0]
             if c2 != nc:  # if c2 not equal to number of classes (i.e. for Classify() output)
