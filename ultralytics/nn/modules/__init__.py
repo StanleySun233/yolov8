@@ -53,7 +53,9 @@ from .block import (
     RepVGGDW,
     ResNetLayer,
     SCDown,
+    CARAFE,
 )
+
 from .conv import (
     CBAM,
     ChannelAttention,
@@ -82,6 +84,8 @@ from .transformer import (
     TransformerEncoderLayer,
     TransformerLayer,
 )
+
+from .mamba_yolo import SimpleStem, VisionClueMerge, VSSBlock, XSSBlock
 
 __all__ = (
     "Conv",
@@ -150,4 +154,9 @@ __all__ = (
     "Attention",
     "PSA",
     "SCDown",
+    "CARAFE",
+    "SimpleStem",
+    "VisionClueMerge",
+    "VSSBlock",
+    "XSSBlock"
 )
