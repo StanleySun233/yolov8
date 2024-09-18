@@ -30,5 +30,5 @@ cd ..
 ```shell
 python mbyolo_train.py --task train --data ultralytics/cfg/datasets/coco8.yaml \
   --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B.yaml --amp \
-  --project ./output_dir/mscoco --name mambayolo_n --device 0
+  --project ./output_dir/mscoco --name mambayolo_n
 ```

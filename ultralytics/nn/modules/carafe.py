@@ -1,4 +1,6 @@
-from models.common import *
+import torch
+import torch.nn as nn
+from .conv import Conv
 
 
 class CARAFE(nn.Module):
