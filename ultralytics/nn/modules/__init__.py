@@ -53,13 +53,7 @@ from .block import (
     RepVGGDW,
     ResNetLayer,
     SCDown,
-    CARAFE,
-    SimpleStem,
-    VisionClueMerge,
-    VSSBlock,
-    XSSBlock,
 )
-
 from .conv import (
     CBAM,
     ChannelAttention,
@@ -88,9 +82,8 @@ from .transformer import (
     TransformerEncoderLayer,
     TransformerLayer,
 )
-
 from .mamba_yolo import SimpleStem, VisionClueMerge, VSSBlock, XSSBlock
-
+from .carafe import CARAFE
 __all__ = (
     "Conv",
     "Conv2",
