@@ -26,7 +26,7 @@ pip install .
 cd ..
 ```
 
-3. run
+3. run test demo for mamba
 ```shell
 python mbyolo_train.py --task train --data ultralytics/cfg/datasets/coco8.yaml \
   --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B.yaml --amp \
