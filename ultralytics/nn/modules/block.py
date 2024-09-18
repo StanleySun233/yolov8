@@ -10,6 +10,12 @@ from ultralytics.utils.torch_utils import fuse_conv_and_bn
 from .conv import Conv, DWConv, GhostConv, LightConv, RepConv, autopad
 from .transformer import TransformerBlock
 from .carafe import CARAFE
+from .mamba_yolo import (
+    SimpleStem,
+    VisionClueMerge,
+    VSSBlock,
+    XSSBlock,
+)
 
 __all__ = (
     "DFL",
@@ -47,7 +53,12 @@ __all__ = (
     "Attention",
     "PSA",
     "SCDown",
-    "CARAFE"
+    "CARAFE",
+    "SimpleStem",
+    "VisionClueMerge",
+    "VSSBlock",
+    "XSSBlock",
+
 )
 
 

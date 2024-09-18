@@ -54,6 +54,11 @@ from .block import (
     ResNetLayer,
     SCDown,
     CARAFE,
+    SimpleStem,
+    VisionClueMerge,
+    VSSBlock,
+    XSSBlock,
+
 )
 
 from .conv import (

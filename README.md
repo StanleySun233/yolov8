@@ -28,7 +28,7 @@ cd ..
 
 3. run
 ```shell
-python mbyolo_train.py --task train --data data/container/data.yaml \
-  --config ultralytics/cfg/models/mamba-yolo/Mamba-YOLO-T.yaml --amp \
+python mbyolo_train.py --task train --data ultralytics/cfg/datasets/coco8.yaml \
+  --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B.yaml --amp \
   --project ./output_dir/mscoco --name mambayolo_n --device 0
 ```
