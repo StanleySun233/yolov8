@@ -29,14 +29,14 @@ if __name__ == '__main__':
     opt = parse_opt()
     task = opt.task
     args = {
-        "data": ROOT + opt.data,
+        "data": opt.data,
         "epochs": opt.epochs,
         "workers": opt.workers,
         "batch": opt.batch_size,
         "optimizer": opt.optimizer,
         "device": opt.device,
         "amp": opt.amp,
-        "project": ROOT + opt.project,
+        "project": opt.project,
         "name": opt.name,
     }
     model_conf = ROOT + opt.config
