@@ -2,8 +2,8 @@
 
 1. clone this repo
 ```shell
-git clone https://github.com/StanleySun233/mamba-yolo.git
-cd mamba-yolo
+git clone https://github.com/StanleySun233/yolov8.git
+cd yolov8
 ```
 
 2. note the environment:
@@ -25,9 +25,13 @@ cd ..
 
 3. run test demo for mamba
 ```shell
-python mbyolo_train.py --task train --data ultralytics/cfg/datasets/coco8.yaml \
-  --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B.yaml --amp \
-  --project ./output_dir/mscoco --name mambayolo_n
+python mbyolo_train.py --task train --amp \
+  --data ultralytics/cfg/datasets/coco8.yaml \
+  --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B.yaml \
+  --project ./output_dir/test/mbyolo_coco8_test \
+  --name mambayolo_n \
+  --epoch 1 \
+  --batch_size 16
 ```
 
 # where it from
