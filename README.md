@@ -16,6 +16,7 @@ cd mamba-yolo
 * torch=2.3.0
 
 ```shell
+# python -m pip install --upgrade pip
 pip install torch===2.3.0 torchvision torchaudio
 pip install seaborn thop timm einops
 pip install opencv-python
