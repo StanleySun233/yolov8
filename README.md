@@ -1,7 +1,3 @@
-# where it from
-* yolov8 forked from [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
-* mamba-yolo forked from [HZAI-ZJNU/Mamba-YOLO](https://github.com/HZAI-ZJNU/Mamba-YOLO)
-
 # install
 
 1. clone this repo
@@ -33,3 +29,8 @@ python mbyolo_train.py --task train --data ultralytics/cfg/datasets/coco8.yaml \
   --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B.yaml --amp \
   --project ./output_dir/mscoco --name mambayolo_n
 ```
+
+# where it from
+* yolov8 forked from [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
+* mamba-yolo forked from [HZAI-ZJNU/Mamba-YOLO](https://github.com/HZAI-ZJNU/Mamba-YOLO)
+* carafe forked from [XiaLiPKU/CARAFE](https://github.com/XiaLiPKU/CARAFE)
