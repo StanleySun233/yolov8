@@ -1,28 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
-class ConvBNReLU(nn.Module):
-    '''Module for the Conv-BN-ReLU tuple.'''
-    def __init__(self, c_in, c_out, kernel_size, stride, padding, dilation,
-                 use_relu=True):
-        super(ConvBNReLU, self).__init__()
-        self.conv = nn.Conv2d(
-                c_in, c_out, kernel_size=kernel_size, stride=stride,
-                padding=padding, dilation=dilation, bias=False)
-        self.bn = nn.BatchNorm2d(c_out)
-        if use_relu:
-            self.relu = nn.ReLU(inplace=True)
-        else:
-            self.relu = None
-
-    def forward(self, x):
-        x = self.conv(x)
-        x = self.bn(x)
-        if self.relu is not None:
-            x = self.relu(x)
-        return x
-
+from .conv import Conv
 
 class CARAFE(nn.Module):
     def __init__(self, c, c_mid=64, scale=2, k_up=5, k_enc=3):
@@ -43,9 +22,9 @@ class CARAFE(nn.Module):
         super(CARAFE, self).__init__()
         self.scale = scale
 
-        self.comp = ConvBNReLU(c, c_mid, kernel_size=1, stride=1,
+        self.comp = Conv(c, c_mid, kernel_size=1, stride=1,
                                padding=0, dilation=1)
-        self.enc = ConvBNReLU(c_mid, (scale * k_up) ** 2, kernel_size=k_enc,
+        self.enc = Conv(c_mid, (scale * k_up) ** 2, kernel_size=k_enc,
                               stride=1, padding=k_enc // 2, dilation=1,
                               use_relu=False)
         self.pix_shf = nn.PixelShuffle(scale)
