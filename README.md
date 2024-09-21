@@ -61,15 +61,27 @@ python mbyolo_train.py --task train --amp \
   # epoch=16时占用21.9G, but process is killed at 3rd train???
 ```
 
-* yolov8+mambaL-carafe, neu-det
+* yolov8+mambaB+carafe, neu-det
 ```shell
 python mbyolo_train.py --task train --amp \
   --data /workspace/neu-det/data.yaml \
-  --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-L-carafe.yaml \
+  --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B-carafe.yaml \
   --project ./output_dir/test/mbyolo_coco8_test \
   --name mambayolo_cdt \
   --epoch 300 \
   --batch_size 8 
+  # epoch=16时占用21.9G, but process is killed at 3rd train???
+```
+
+* yolov8+carafe, neu-det
+```shell
+python mbyolo_train.py --task train --amp \
+  --data /workspace/neu-det/data.yaml \
+  --config ultralytics/cfg/models/v8/yolov8-carafe.yaml \
+  --project ./output_dir/test/mbyolo_coco8_test \
+  --name mambayolo_cdt \
+  --epoch 300 \
+  --batch_size 16 
   # epoch=16时占用21.9G, but process is killed at 3rd train???
 ```
 
