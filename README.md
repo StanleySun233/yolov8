@@ -38,11 +38,11 @@ python -m torch.distributed.run --nproc_per_node=2 \
 
 4. TASKS
 
-* yolov8+mambaB, container-damage-detection
+* yolov8+mambaB+carafe, container-damage-detection
 ```shell
 python mbyolo_train.py --task train --amp \
   --data /workspace/container/data.yaml \
-  --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B.yaml \
+  --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B-carafe.yaml \
   --project ./output_dir/test/mbyolo_coco8_test \
   --name mambayolo_cdt \
   --epoch 300 \
@@ -53,7 +53,7 @@ python mbyolo_train.py --task train --amp \
 ```shell
 python mbyolo_train.py --task train --amp \
   --data /workspace/container/data.yaml \
-  --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B-carafe.yaml \
+  --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B.yaml \
   --project ./output_dir/test/mbyolo_coco8_test \
   --name mambayolo_cdt \
   --epoch 300 \
