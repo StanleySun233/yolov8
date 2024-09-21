@@ -55,7 +55,8 @@ python mbyolo_train.py --task train --amp \
   --project ./output_dir/test/mbyolo_coco8_test \
   --name mambayolo_cdt \
   --epoch 200 \
-  --batch_size 8 # epoch=16时占用21.9G, but process is killed at 3rd train???
+  --batch_size 8 
+  # epoch=16时占用21.9G, but process is killed at 3rd train???
 
 ```
 
