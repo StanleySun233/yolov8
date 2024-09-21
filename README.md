@@ -58,7 +58,6 @@ python mbyolo_train.py --task train --amp \
   --name mambayolo_cdt \
   --epoch 300 \
   --batch_size 8 
-  # epoch=16时占用21.9G, but process is killed at 3rd train???
 ```
 
 * yolov8+mambaB+carafe, neu-det
@@ -70,7 +69,6 @@ python mbyolo_train.py --task train --amp \
   --name mambayolo_cdt \
   --epoch 300 \
   --batch_size 8 
-  # epoch=16时占用21.9G, but process is killed at 3rd train???
 ```
 
 * yolov8+carafe, neu-det
@@ -82,7 +80,17 @@ python mbyolo_train.py --task train --amp \
   --name mambayolo_cdt \
   --epoch 300 \
   --batch_size 16 
-  # epoch=16时占用21.9G, but process is killed at 3rd train???
+```
+
+* yolov8+mamba, neu-det
+```shell
+python mbyolo_train.py --task train --amp \
+  --data /workspace/neu-det/data.yaml \
+  --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B.yaml \
+  --project ./output_dir/test/mbyolo_coco8_test \
+  --name mambayolo_cdt \
+  --epoch 300 \
+  --batch_size 16 
 ```
 
 5. DATASETS
