@@ -126,6 +126,39 @@ python mbyolo_train.py --task train --amp \
   --batch_size 16
 ```
 
+* yolov8+mambaB+carafe, cr7-det
+```shell
+python mbyolo_train.py --task train --amp \
+  --data /workspace/cr7-det/data.yaml \
+  --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B-carafe.yaml \
+  --project ./output_dir/test/mbyolo_coco8_test \
+  --name mambayolo_cdt \
+  --epoch 300 \
+  --batch_size 16
+```
+
+* yolov8+mambaB, cr7-det
+```shell
+python mbyolo_train.py --task train --amp \
+  --data /workspace/cr7-det/data.yaml \
+  --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B.yaml \
+  --project ./output_dir/test/mbyolo_coco8_test \
+  --name mambayolo_cdt \
+  --epoch 300 \
+  --batch_size 16
+```
+
+* yolov8+carafe, cr7-det
+```shell
+python mbyolo_train.py --task train --amp \
+  --data /workspace/cr7-det/data.yaml \
+  --config ultralytics/cfg/models/v8/yolov8-carafe.yaml \
+  --project ./output_dir/test/mbyolo_coco8_test \
+  --name mambayolo_cdt \
+  --epoch 300 \
+  --batch_size 8
+```
+
 5. DATASETS
 
 
