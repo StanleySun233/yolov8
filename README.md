@@ -13,7 +13,7 @@ cd yolov8
 
 ```shell
 # python -m pip install --upgrade pip
-pip install torch===2.3.0 torchvision torchaudio
+# pip install torch===2.3.0 torchvision torchaudio
 pip install seaborn thop timm einops opencv-python scipy
 cd selective_scan
 pip install .
@@ -26,7 +26,8 @@ cd ..
 
 3. run test demo for mamba
 ```shell
-python mbyolo_train.py --task train --amp \
+python -m torch.distributed.run --nproc_per_node=2 \
+  mbyolo_train.py --task train --amp \
   --data ultralytics/cfg/datasets/coco8.yaml \
   --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B.yaml \
   --project ./output_dir/test/mbyolo_coco8_test \
@@ -48,16 +49,28 @@ python mbyolo_train.py --task train --amp \
   --batch_size 8 # epoch=16时占用21.9G, but process is killed at 3rd train???
 ```
 
+* yolov8+mambaB, container-damage-detection
 ```shell
 python mbyolo_train.py --task train --amp \
   --data /workspace/container/data.yaml \
   --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B-carafe.yaml \
   --project ./output_dir/test/mbyolo_coco8_test \
   --name mambayolo_cdt \
-  --epoch 200 \
+  --epoch 300 \
   --batch_size 8 
   # epoch=16时占用21.9G, but process is killed at 3rd train???
+```
 
+* yolov8+mambaL-carafe, neu-det
+```shell
+python mbyolo_train.py --task train --amp \
+  --data /workspace/neu-det/data.yaml \
+  --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-L-carafe.yaml \
+  --project ./output_dir/test/mbyolo_coco8_test \
+  --name mambayolo_cdt \
+  --epoch 300 \
+  --batch_size 8 
+  # epoch=16时占用21.9G, but process is killed at 3rd train???
 ```
 
 5. DATASETS
