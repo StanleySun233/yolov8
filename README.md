@@ -14,10 +14,7 @@ cd yolov8
 ```shell
 # python -m pip install --upgrade pip
 pip install torch===2.3.0 torchvision torchaudio
-pip install seaborn thop timm einops
-pip install opencv-python
-pip install timm
-pip install scipy
+pip install seaborn thop timm einops opencv-python
 cd selective_scan
 pip install .
 cd ..
@@ -33,6 +30,33 @@ python mbyolo_train.py --task train --amp \
   --epoch 1 \
   --batch_size 16
 ```
+
+4. TASKS
+
+* yolov8+mambaB, container-damage-detection
+```shell
+python mbyolo_train.py --task train --amp \
+  --data /workspace/container/data.yaml \
+  --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B.yaml \
+  --project ./output_dir/test/mbyolo_coco8_test \
+  --name mambayolo_cdt \
+  --epoch 300 \
+  --batch_size 8 # epoch=16时占用21.9G, but process is killed at 3rd train???
+```
+
+```shell
+python mbyolo_train.py --task train --amp \
+  --data /workspace/container/data.yaml \
+  --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B-carafe.yaml \
+  --project ./output_dir/test/mbyolo_coco8_test \
+  --name mambayolo_cdt \
+  --epoch 200 \
+  --batch_size 8 # epoch=16时占用21.9G, but process is killed at 3rd train???
+
+```
+
+5. DATASETS
+
 
 # where it from
 * yolov8 forked from [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
