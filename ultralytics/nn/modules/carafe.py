@@ -18,7 +18,7 @@ class MetaGamma(nn.Module):
         """
         super(MetaGamma, self).__init__()
         self.scale = scale
-        self.meta_gama = MetaGammaPooling(1)
+        self.meta_gama = MetaGammaPooling(1.1)
         self.comp = Conv(c, c_mid)
         self.enc = Conv(c_mid, (scale * k_up) ** 2, k=k_enc, act=False)
         self.pix_shf = nn.PixelShuffle(scale)
@@ -45,7 +45,7 @@ class MetaGamma(nn.Module):
 
 
 class MetaGammaPooling(nn.Module):
-    def __init__(self, init_gamma=1):
+    def __init__(self, init_gamma=1.1):
         super().__init__()
         self.gamma = nn.Parameter(torch.tensor(init_gamma))
 
