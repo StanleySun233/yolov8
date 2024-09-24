@@ -26,8 +26,7 @@ cd ..
 
 3. run test demo for mamba
 ```shell
-python -m torch.distributed.run --nproc_per_node=2 \
-  mbyolo_train.py --task train --amp \
+python mbyolo_train.py --task train --amp \
   --data ultralytics/cfg/datasets/coco8.yaml \
   --config ultralytics/cfg/models/v8/mamba-yolo/Mamba-YOLO-B.yaml \
   --project ./output_dir/test/mbyolo_coco8_test \
@@ -156,6 +155,17 @@ python mbyolo_train.py --task train --amp \
   --project ./output_dir/test/mbyolo_coco8_test \
   --name mambayolo_cdt \
   --epoch 300 \
+  --batch_size 8
+```
+
+* yolov8+MetaGamma, coco8
+```shell
+python mbyolo_train.py --task train --amp \
+  --data ultralytics/cfg/datasets/coco8.yaml \
+  --config ultralytics/cfg/models/v8/yolov8-mg.yaml \
+  --project ./output_dir/test/mbyolo_coco8_test \
+  --name mambayolo_cdt \
+  --epoch 1 \
   --batch_size 8
 ```
 
