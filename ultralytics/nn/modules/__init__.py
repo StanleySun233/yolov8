@@ -83,7 +83,7 @@ from .transformer import (
     TransformerLayer,
 )
 from .mamba_yolo import SimpleStem, VisionClueMerge, VSSBlock, XSSBlock
-from .carafe import CARAFE
+from .carafe import CARAFE,MetaGamma
 __all__ = (
     "Conv",
     "Conv2",
@@ -155,5 +155,6 @@ __all__ = (
     "SimpleStem",
     "VisionClueMerge",
     "VSSBlock",
-    "XSSBlock"
+    "XSSBlock",
+    "MetaGamma"
 )
