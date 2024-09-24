@@ -169,6 +169,17 @@ python mbyolo_train.py --task train --amp \
   --batch_size 8
 ```
 
+* yolov8+MetaGamma, neu-det
+```shell
+python mbyolo_train.py --task train --amp \
+  --data /workspace/neu-det/data.yaml \
+  --config ultralytics/cfg/models/v8/yolov8-mg.yaml \
+  --project ./output_dir/test/mbyolo_coco8_test \
+  --name mambayolo_cdt \
+  --epoch 300 \
+  --batch_size 16 
+```
+
 5. DATASETS
 
 
