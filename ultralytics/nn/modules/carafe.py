@@ -47,7 +47,8 @@ class MetaGamma(nn.Module):
 class MetaGammaPooling(nn.Module):
     def __init__(self, init_gamma=1.1):
         super().__init__()
-        self.gamma = nn.Parameter(torch.tensor(init_gamma))
+        # self.gamma = nn.Parameter(torch.tensor(init_gamma))
+        self.gamma = 1.0
 
     def forward(self, x):
         x = torch.clamp(x, 0, 1)
@@ -94,6 +95,7 @@ class CARAFE(nn.Module):
 
         X = torch.einsum('bkhw,bckhw->bchw', [W, X])
         return X
+
 
 if __name__ == '__main__':
     x = torch.Tensor(1, 16, 24, 24)
