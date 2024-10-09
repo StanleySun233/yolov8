@@ -71,7 +71,6 @@ class CARAFE(nn.Module):
         """
         super(CARAFE, self).__init__()
         self.scale = scale
-        self.meta_gama = MetaGammaPooling(1)
         self.comp = Conv(c, c_mid)
         self.enc = Conv(c_mid, (scale * k_up) ** 2, k=k_enc, act=False)
         self.pix_shf = nn.PixelShuffle(scale)
@@ -83,7 +82,6 @@ class CARAFE(nn.Module):
     def forward(self, X):
         b, c, h, w = X.size()
         h_, w_ = h * self.scale, w * self.scale
-        W = self.meta_gama(X)
         W = self.comp(W)
         W = self.enc(W)
         W = self.pix_shf(W)
